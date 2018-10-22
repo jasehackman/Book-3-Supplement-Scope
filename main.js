@@ -18,47 +18,52 @@
 
 // Mod Squad
 
-let HTMLRepresentation = `<h1>The Mod Squad</h1>`
-{
-    const ModSquad = {
-        "members": ["Pete Cochran", "Linc Hayes", "Julie Barnes", "Capt. Adam Greer", "Chief Barney Metcalf"],
-        "series": {
-            "start": "1968",
-            "end": "1973"
-        }
-    }
+// let HTMLRepresentation = `<h1>The Mod Squad</h1>`
+// {
+//     const ModSquad = {
+//         "members": ["Pete Cochran", "Linc Hayes", "Julie Barnes", "Capt. Adam Greer", "Chief Barney Metcalf"],
+//         "series": {
+//             "start": "1968",
+//             "end": "1973"
+//         }
+//     }
 
     
 
-    ModSquad.members.forEach(member => {
-        HTMLRepresentation += `<div>${member}</div>`
-    })
-    console.log(HTMLRepresentation);
-}
-
-
-document.querySelector(".show-info").innerHTML = HTMLRepresentation
-
-// // Simon Says
-// // There are two separate scoping issues in this code. Remember, for and if are their own block scopes and if something is declared with let or const then that variable only exists in that scope.
-
-// const locations = [[1,1], [1,2], [1,3], [2,1], [2,2], [2,3]]
-
-// for (let k = 0; k < locations.length; k++) {
-//     const currentLocation = locations[k]
-
-//     if (currentLocation[0] > 2) {
-//         const invalidLocation = true
-//     }
-
-//     if (invalidLocation) {
-//         console.log("This location is invalid")
-//     }
+//     ModSquad.members.forEach(member => {
+//         HTMLRepresentation += `<div>${member}</div>`
+//     })
+//     console.log(HTMLRepresentation);
 // }
 
-// /*
-//     Since k is used as the loop counter, it will be the
-//     total number of locations, not the invalid ones. You
-//     need to fix this somehow.
-// */
-// console.log(`There were ${k} invalid locations`)
+
+// document.querySelector(".show-info").innerHTML = HTMLRepresentation
+
+// Simon Says
+// There are two separate scoping issues in this code.
+//  Remember, for and if are their own block scopes and if something is declared with let or const then that variable only exists in that scope.
+
+const locations = [[1,1], [1,2], [1,3], [2,1], [2,2], [2,3]]
+
+let k = 0
+let counter = 0
+for (k = 0; k < locations.length; k++) {
+    const currentLocation = locations[k]
+
+    if (currentLocation[0] > 2) {
+        const invalidLocation = true
+    
+
+    if (invalidLocation) {
+        console.log("This location is invalid")
+        counter++
+    }
+  }
+}
+
+/*
+    Since k is used as the loop counter, it will be the
+    total number of locations, not the invalid ones. You
+    need to fix this somehow.
+*/
+console.log(`There were ${counter} invalid locations`)
